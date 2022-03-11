@@ -4,11 +4,11 @@
   class="form-control rounded-0"
   placeholder="{{placeholder}}"
   [formControl]="control"
-  [ngClass]="{ 'in-valid' : showErrors() }"
+  [ngClass]="{ 'is-invalid' : showErrors() }"
 />
 
-<ng-container *ngIf="showErrors()">
-  <div class="invalid-feedback" *ngIf="control.errors.required">
+<ng-container *ngIf="showErrors()"> 
+  <div class="invalid-feedback" *ngIf="control.hasError('required')" >
     This field is required!
   </div>
 

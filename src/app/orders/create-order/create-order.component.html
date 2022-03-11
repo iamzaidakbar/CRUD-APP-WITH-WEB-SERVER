@@ -1,7 +1,10 @@
 <div class="container mt-5">
 
   <div class=" border col-md-5 p-4 mx-auto">
-    <app-forms
+   
+    <form [formGroup]="form" >
+
+      <app-forms
       [control]="form.get('amount')"
       label="Amount"
       placeholder="Amount"
@@ -36,10 +39,14 @@
       type="text"
     ></app-forms>
 
+
+
     <app-buttons variant="success col-6 mt-2 py-2" (click)="formSubmitted($event)">
       {{isEditMode() ? 'Save Changes' : 'Create new order'}}
     </app-buttons>
     <app-buttons variant="danger col-6 mt-2 py-2" routerLink="/show-orders/">Discard</app-buttons>
+
+  </form>
 
   </div>
 

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import {AbstractControl, FormControl} from "@angular/forms";
+import { AbstractControl, FormControl } from "@angular/forms";
 
 @Component({
   selector: 'app-forms',
@@ -9,16 +9,16 @@ import {AbstractControl, FormControl} from "@angular/forms";
 export class FormsComponent implements OnInit {
 
   @Input() control: FormControl | AbstractControl
-  @Input() label : string
-  @Input() placeholder : string
-  @Input() type : string
+  @Input() label: string
+  @Input() placeholder: string
+  @Input() type: string
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  showErrors(){
+  showErrors() {
     const { dirty, touched, errors } = this.control
     return touched && dirty && errors
   }
