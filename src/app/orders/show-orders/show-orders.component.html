@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-end mb-5">
+    <app-buttons routerLink="/create-order/">Add new Order</app-buttons>
+  </div>
+
+  <app-tables [columns]="columns" [rows]="orders" (onClickDelete)="deleteOrder($event)" showActions = false ></app-tables>
+
+</div>

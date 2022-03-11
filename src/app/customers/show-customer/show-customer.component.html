@@ -1,0 +1,8 @@
+<div class="container mt-5">
+  <div class="d-flex justify-content-end mb-5">
+    <app-buttons routerLink="/create-customer/">Add new Customer</app-buttons>
+  </div>
+
+ <app-tables [columns]="columns" [rows]="customers" (onClickDelete)="deleteCustomer($event)"  showActions = false ></app-tables>
+
+</div>

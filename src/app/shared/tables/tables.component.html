@@ -1,0 +1,21 @@
+
+
+<table class="table table-borderless shadow">
+  <thead>
+  <tr>
+    <th scope="col" *ngFor="let column of columns">{{column.label}}</th>
+    <th *ngIf="showActions" scope="col">Actions</th>
+
+
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let row of rows">
+    <td *ngFor="let column of columns"> {{row[column.key]}} </td>
+    <td *ngIf="showActions" class="d-flex justify-content-end" >
+      <app-buttons [routerLink]="'/update-customer/'+ row.id ">Edit</app-buttons>
+      <app-buttons variant="danger" style="margin-left: 4px" (click)="onClickDelete.emit(row.id)" >Delete</app-buttons>
+    </td>
+  </tr>
+  </tbody>
+</table>

@@ -1,0 +1,47 @@
+<div class="container mt-5">
+
+<div class=" border col-md-5 p-4 mx-auto">
+  <app-forms
+    [control]="form.controls.name"
+    label="Name"
+    placeholder="Name"
+    type="text"
+  ></app-forms>
+
+  <app-forms
+    [control]="form.controls.phone"
+    label="Phone"
+    placeholder="Phone"
+    type="text"
+  ></app-forms>
+
+  <app-forms
+    [control]="form.controls.email"
+    label="Email"
+    placeholder="Email"
+    type="email"
+  ></app-forms>
+
+  <app-forms
+    [control]="form.controls.address"
+    label="Address"
+    placeholder="Address"
+    type="text"
+  ></app-forms>
+
+  <app-forms
+    [control]="form.controls.city"
+    label="City"
+    placeholder="City"
+    type="text"
+  ></app-forms>
+
+  <app-buttons variant="success col-6 mt-2 py-2"   (click)="formSubmitted($event)">
+    {{isEditMode() ? 'Save Changes' : 'Create new customer'}}
+  </app-buttons>
+  <app-buttons variant="danger col-6 mt-2 py-2" routerLink="/show-customer/">Discard</app-buttons>
+
+</div>
+
+
+</div>
