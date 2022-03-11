@@ -1,0 +1,28 @@
+<label class="form-label">{{label}}</label>
+<input
+  type="{{type}}"
+  class="form-control rounded-0"
+  placeholder="{{placeholder}}"
+  [formControl]="control"
+  [ngClass]="{ 'in-valid' : showErrors() }"
+/>
+
+<ng-container *ngIf="showErrors()">
+  <div class="invalid-feedback" *ngIf="control.errors.required">
+    This field is required!
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.errors.pattern">
+    Invalid format
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.errors.minlength">
+    Value cannot be less than {{ control.errors.minlength.requiredLength}}
+    Characters
+  </div>
+
+  <div class="invalid-feedback" *ngIf="control.errors.maxlength">
+    Value cannot be more than {{ control.errors.maxlength.requiredLength}}
+    Characters
+  </div>
+</ng-container>
